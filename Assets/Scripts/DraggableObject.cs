@@ -1,13 +1,15 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class DraggableObject : MonoBehaviour
 {
+    public static event Action onPuzzlePieceSnapped;
     [SerializeField] public Transform target;
     private bool isDragging = false;
-    private bool isSnapped = false;
+    public bool isSnapped = false;
     private float minSnapDistance = 1f;
     public void OnClick() {
         if (isSnapped) return;
@@ -29,6 +31,7 @@ public class DraggableObject : MonoBehaviour
         {
             transform.position = target.position;
             isSnapped = true;
+            onPuzzlePieceSnapped?.Invoke();
         }
     }
 }
