@@ -392,6 +392,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906817651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8040116507853204938, guid: d4c7b945f9630544285b7e8a369a38a3, type: 3}
+  m_PrefabInstance: {fileID: 7441845129007284421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e515afca69ace99459fb63fdcea8fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &949284258
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +569,10 @@ MonoBehaviour:
     image: {fileID: 2800000, guid: 7de01d6fc8fd431429cd9bf8a2f9f10b, type: 3}
   - word: tin
     image: {fileID: 2800000, guid: c8fd269fe472f9940af53aee33a77a50, type: 3}
+  puzzlePieces:
+  - {fileID: 1775542540}
+  - {fileID: 906817651}
+  - {fileID: 1634224178}
 --- !u!4 &1138310653
 Transform:
   m_ObjectHideFlags: 0
@@ -573,6 +588,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1634224178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7642197396297085112, guid: 04d6feb0c37ef6a4f898f5345439ec8b, type: 3}
+  m_PrefabInstance: {fileID: 2215239491891296993}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e515afca69ace99459fb63fdcea8fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1719947844
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +633,17 @@ Transform:
   - {fileID: 239128667}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775542540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7044769554413020324, guid: 233a3b713638a0b4d9884dc448e4a384, type: 3}
+  m_PrefabInstance: {fileID: 5775588301706916347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e515afca69ace99459fb63fdcea8fb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2215239491891296993
 PrefabInstance:
   m_ObjectHideFlags: 0

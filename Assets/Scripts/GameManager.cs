@@ -14,7 +14,7 @@ public class JigsawData
 public class GameManager : MonoBehaviour
 {
     [SerializeField] JigsawData[] jigsawData;
-    private DraggableObject[] puzzlePieces;
+    [SerializeField] private DraggableObject[] puzzlePieces;
     private int currentPuzzleIndex = 0;
 
     private void OnEnable()
@@ -29,16 +29,24 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        puzzlePieces = FindObjectsOfType<DraggableObject>();
         BuildPuzzle();
     }
 
     void BuildPuzzle()
     {
         // put puzzle pieces in random positions
+        Vector2[] positions = new Vector2[puzzlePieces.Length];
         for (int i = 0; i < puzzlePieces.Length; i++)
         {
-            puzzlePieces[i].transform.position = new Vector3(Random.Range(-9, 9), Random.Range(-4, 0), 0);
+            Vector2 randomPosition = new Vector2(Random.Range(-9, 9), -3);
+            while (IsPositionTooClose(randomPosition, positions))
+            {
+                randomPosition = new Vector2(Random.Range(-9, 9), -3);
+            }
+
+            positions[i] = randomPosition;
+            puzzlePieces[i].transform.position = randomPosition;
+
             puzzlePieces[i].isSnapped = false;
         }
 
@@ -54,6 +62,22 @@ public class GameManager : MonoBehaviour
         var sprite = Sprite.Create(jigsawData[currentPuzzleIndex].image, new Rect(0, 0, jigsawData[currentPuzzleIndex].image.width, jigsawData[currentPuzzleIndex].image.height), new Vector2(0.5f, 0.5f));
         image.GetComponent<SpriteRenderer>().sprite = sprite;
     }
+
+    private bool IsPositionTooClose(Vector2 pos, Vector2[] positions)
+    {
+        for (int i = 0; i < positions.Length; i++)
+        {
+            if (positions[i] != null)
+            {
+                if (Vector2.Distance(pos, positions[i]) < 3)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     void CheckIfPuzzleIsComplete()
     {
         for (int i = 0; i < puzzlePieces.Length; i++)
