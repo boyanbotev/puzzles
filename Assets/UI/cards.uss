@@ -1,0 +1,44 @@
+.main {
+    flex-grow: 1;
+}
+
+.cards {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cards-row {
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card {
+    width: 100px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('project://database/Assets/Images/cards/card%20back.png?fileID=2800000&guid=8198f0457e7012849abd3c60b02b1862&type=3#card back');
+}
+
+.shown {
+    background-image: none;
+    background-color: rgb(19, 19, 19);
+    border-radius: 7px;
+}
+
+.card Label {
+    font-size: 80px;
+    color: white;
+    display: none;
+    font-weight: bold;
+}
+
+.shown Label {
+    display: flex;
+}
+
+.removed {
+    background-color: royalblue;
+}
