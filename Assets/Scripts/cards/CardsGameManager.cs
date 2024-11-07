@@ -53,8 +53,8 @@ public class CardsGameManager : MonoBehaviour
         {
             if (card.letter.ToLower() == letter.ToLower() && card.isShown && card.letter != letter)
             {
-               RemoveWinningCards(letter);
-               isWinning = true;
+               StartCoroutine(CorrectCardsRoutine(letter));
+                isWinning = true;
                cardsShown = 0;
             }
         }
@@ -109,5 +109,11 @@ public class CardsGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         card.Flip();
+    }
+
+    IEnumerator CorrectCardsRoutine(string letter)
+    {
+        yield return new WaitForSeconds(0.4f);
+        RemoveWinningCards(letter);
     }
 }

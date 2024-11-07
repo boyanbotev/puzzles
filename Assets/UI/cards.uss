@@ -40,5 +40,9 @@
 }
 
 .removed {
-    background-color: royalblue;
+    background-color: rgba(78, 98, 157, 0);
+}
+
+.removed Label {
+    display: none;
 }
