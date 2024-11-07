@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class DraggableObject : MonoBehaviour
 {
     public static event Action onPuzzlePieceSnapped;
+    public static event Action<string> onSelect;
     [SerializeField] public Transform target;
     private bool isDragging = false;
     public bool isSnapped = false;
@@ -14,6 +16,8 @@ public class DraggableObject : MonoBehaviour
     public void OnClick() {
         if (isSnapped) return;
         isDragging = true;
+
+        onSelect?.Invoke(GetComponentInChildren<TextMeshPro>().text);
     }
 
     public void OnDrag()

@@ -588,6 +588,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1451050078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451050080}
+  - component: {fileID: 1451050079}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1451050079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451050078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a13cda2b938ff0498464b7d8429146a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: a
+    audioClip: {fileID: 8300000, guid: 2581ce3a71bc7624a9c9ca060c2ac055, type: 3}
+  - name: i
+    audioClip: {fileID: 8300000, guid: 0898c7ef124e6ed4fb7c34f30bb0f887, type: 3}
+  - name: n
+    audioClip: {fileID: 8300000, guid: 514265d420798ad488543560f7317e26, type: 3}
+  - name: p
+    audioClip: {fileID: 8300000, guid: cc297c4b873377f4eb1d34c9bede3ab4, type: 3}
+  - name: s
+    audioClip: {fileID: 8300000, guid: 8805863b86cccba43ad2734efd1efe1f, type: 3}
+  - name: t
+    audioClip: {fileID: 8300000, guid: bb4e43131c6f9ce4d818508b86b339eb, type: 3}
+--- !u!4 &1451050080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451050078}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0284858, y: 0.32010356, z: 0.045151617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1634224178 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7642197396297085112, guid: 04d6feb0c37ef6a4f898f5345439ec8b, type: 3}
@@ -849,3 +906,4 @@ SceneRoots:
   - {fileID: 984345969}
   - {fileID: 1719947845}
   - {fileID: 1138310653}
+  - {fileID: 1451050080}
