@@ -17,7 +17,10 @@ public class DraggableObject : MonoBehaviour
         if (isSnapped) return;
         isDragging = true;
 
-        onSelect?.Invoke(GetComponentInChildren<TextMeshPro>().text);
+        var text = GetComponentInChildren<TextMeshPro>();
+        onSelect?.Invoke(text.text);
+        GetComponent<SpriteRenderer>().sortingLayerName = "foreground";
+        text.sortingLayerID = SortingLayer.NameToID("foreground");
     }
 
     public void OnDrag()
@@ -31,6 +34,10 @@ public class DraggableObject : MonoBehaviour
     public void OnRelease()
     {
         isDragging = false;
+        GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+        var text = GetComponentInChildren<TextMeshPro>();
+        text.sortingLayerID = SortingLayer.NameToID("Default");
+
         if (Vector3.Distance(transform.position, target.position) < minSnapDistance)
         {
             transform.position = target.position;

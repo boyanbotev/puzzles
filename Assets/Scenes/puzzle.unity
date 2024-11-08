@@ -560,6 +560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbaead3751d48d048a64f225af0b1146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzlePieceSpawnXBound: 7
+  puzzlePieceSpawnY: -3
   jigsawData:
   - word: ant
     image: {fileID: 2800000, guid: 9313ec4b61a07264e8c027d5e8fa6897, type: 3}
@@ -776,6 +778,22 @@ PrefabInstance:
     - target: {fileID: 139596559230248247, guid: 233a3b713638a0b4d9884dc448e4a384, type: 3}
       propertyPath: m_Name
       value: left
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290054783526925281, guid: 233a3b713638a0b4d9884dc448e4a384, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290054783526925281, guid: 233a3b713638a0b4d9884dc448e4a384, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575061941372321101, guid: 233a3b713638a0b4d9884dc448e4a384, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575061941372321101, guid: 233a3b713638a0b4d9884dc448e4a384, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6093837524719743025, guid: 233a3b713638a0b4d9884dc448e4a384, type: 3}
       propertyPath: m_LocalPosition.x
