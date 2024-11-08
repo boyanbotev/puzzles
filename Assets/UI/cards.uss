@@ -5,17 +5,20 @@
 .cards {
     flex-direction: column;
     justify-content: space-around;
+    flex-grow: 1;
 }
 
 .cards-row {
-    margin-top: 10px;
     flex-direction: row;
     justify-content: space-around;
+    flex-grow: 1;
+    background-color: rgb(84, 84, 84);
 }
 
 .card {
-    width: 100px;
-    height: 130px;
+    margin: 10px;
+    flex-grow: 1;
+    flex-basis: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,13 +33,12 @@
 
 .card Label {
     font-size: 80px;
-    color: white;
-    display: none;
+    color: rgba(255, 255, 255, 0);
     font-weight: bold;
 }
 
 .shown Label {
-    display: flex;
+    color: white;
 }
 
 .removed {
@@ -44,5 +46,5 @@
 }
 
 .removed Label {
-    display: none;
+    color: rgba(255, 255, 255, 0);
 }

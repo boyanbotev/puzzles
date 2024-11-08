@@ -13,6 +13,8 @@ public class JigsawData
 }
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] float puzzlePieceSpawnXBound = 7;
+    [SerializeField] float puzzlePieceSpawnY = -3;
     [SerializeField] JigsawData[] jigsawData;
     [SerializeField] private DraggableObject[] puzzlePieces;
     private int currentPuzzleIndex = 0;
@@ -38,10 +40,10 @@ public class GameManager : MonoBehaviour
         Vector2[] positions = new Vector2[puzzlePieces.Length];
         for (int i = 0; i < puzzlePieces.Length; i++)
         {
-            Vector2 randomPosition = new Vector2(Random.Range(-9, 9), -3);
+            Vector2 randomPosition = GetRandomPosition();
             while (IsPositionTooClose(randomPosition, positions))
             {
-                randomPosition = new Vector2(Random.Range(-9, 9), -3);
+                randomPosition = GetRandomPosition();
             }
 
             positions[i] = randomPosition;
@@ -76,6 +78,11 @@ public class GameManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    Vector2 GetRandomPosition()
+    {
+        return new Vector2(Random.Range(-puzzlePieceSpawnXBound, puzzlePieceSpawnXBound), puzzlePieceSpawnY);
     }
 
     void CheckIfPuzzleIsComplete()
