@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 [System.Serializable]
 public class JigsawData
@@ -13,6 +14,7 @@ public class JigsawData
 }
 public class GameManager : MonoBehaviour
 {
+    public static event Action<string> onWordCompleted;
     [SerializeField] float puzzlePieceSpawnXBound = 7;
     [SerializeField] float puzzlePieceSpawnY = -3;
     [SerializeField] JigsawData[] jigsawData;
@@ -82,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     Vector2 GetRandomPosition()
     {
-        return new Vector2(Random.Range(-puzzlePieceSpawnXBound, puzzlePieceSpawnXBound), puzzlePieceSpawnY);
+        return new Vector2(UnityEngine.Random.Range(-puzzlePieceSpawnXBound, puzzlePieceSpawnXBound), puzzlePieceSpawnY);
     }
 
     void CheckIfPuzzleIsComplete()
@@ -95,7 +97,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        LoadNextChallenge();
+        EmitWord();
+        StartCoroutine(NextChallengeRoutine());
+    }
+
+    void EmitWord()
+    {
+        string word = "";
+        for (int i = 0; i < puzzlePieces.Length; i++)
+        {
+            word += puzzlePieces[i].gameObject.GetComponentInChildren<TextMeshPro>().text;
+        }
+        onWordCompleted?.Invoke(word);
     }
 
     void LoadNextChallenge()
@@ -115,4 +128,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    IEnumerator NextChallengeRoutine()
+    {
+        yield return new WaitForSeconds(0.6f);
+        LoadNextChallenge();
+    }
 }

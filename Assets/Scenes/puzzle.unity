@@ -632,6 +632,14 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 8805863b86cccba43ad2734efd1efe1f, type: 3}
   - name: t
     audioClip: {fileID: 8300000, guid: bb4e43131c6f9ce4d818508b86b339eb, type: 3}
+  - name: ant
+    audioClip: {fileID: 8300000, guid: 1749cdbc9eb3f9d42abcfb1bb0f6b59f, type: 3}
+  - name: pan
+    audioClip: {fileID: 8300000, guid: 2dc87988f24102548815faf1bf8a0e6c, type: 3}
+  - name: pin
+    audioClip: {fileID: 8300000, guid: 635ad7eacfe81a844a3786f595d903f9, type: 3}
+  - name: tin
+    audioClip: {fileID: 8300000, guid: 6a38d7c28475a1a4887d62eb3027321c, type: 3}
 --- !u!4 &1451050080
 Transform:
   m_ObjectHideFlags: 0

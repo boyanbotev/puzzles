@@ -13,12 +13,14 @@ public class AudioManager : MonoBehaviour
     {
         Card.onFlip += PlayLetterSound;
         DraggableObject.onSelect += PlayLetterSound;
+        GameManager.onWordCompleted += PlaySound;
     }
 
     private void OnDisable()
     {
         Card.onFlip -= PlayLetterSound;
         DraggableObject.onSelect -= PlayLetterSound;
+        GameManager.onWordCompleted -= PlaySound;
     }
 
     void PlayLetterSound(string letter)
