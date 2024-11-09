@@ -40,6 +40,9 @@ public class CardsGameManager : MonoBehaviour
 
     void BuildCards()
     {
+        cards.Clear();
+        cardsContainer.Clear();
+
         for (int i = 0; i < rowCount; i++)
         {
             BuildRow();
@@ -87,6 +90,8 @@ public class CardsGameManager : MonoBehaviour
                 card.Remove();
             }
         }
+
+        CheckIfShouldReset();
     }
 
     VisualElement BuildRow()
@@ -105,6 +110,34 @@ public class CardsGameManager : MonoBehaviour
         return row;
     }
 
+    void CheckIfShouldReset()
+    {
+        foreach (var card in cards)
+        {
+            if (!card.isRemoved)
+            {
+                return;
+            }
+        }
+        StartCoroutine(NextChallengeRoutine());
+    }
+
+    private void Reset()
+    {
+        // shuffle letters
+        for (int i = 0; i < letters.Length; i++)
+        {
+            string temp = letters[i];
+            int randomIndex = UnityEngine.Random.Range(i, letters.Length);
+            letters[i] = letters[randomIndex];
+            letters[randomIndex] = temp;
+        }
+
+        letterIndex = 0;
+
+        BuildCards();
+    }
+
     IEnumerator FalseCardRoutine(Card card)
     {
         yield return new WaitForSeconds(0.4f);
@@ -115,5 +148,11 @@ public class CardsGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         RemoveWinningCards(letter);
+    }
+
+    IEnumerator NextChallengeRoutine()
+    {
+        yield return new WaitForSeconds(0.6f);
+        Reset();
     }
 }
